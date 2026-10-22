@@ -8,8 +8,6 @@ import { getCompanyData } from "@/_domain/services/company.services";
 import { CompanyModel } from "@/_domain/models/company.model";
 import "./page.css"
 import HubspotForm from "@/common/components/forms/HubspotForm";
-import GoogleMap from "@/common/components/googlemaps/GoogleMap";
-import { MapStyles } from "@/common/components/googlemaps/MapStyles";
 import ContactHeroSection from "./components/ContactHeroSection";
 import { serialize } from "@/common/utils/helper-serialize";
 
@@ -63,19 +61,20 @@ const page = async () => {
 					</div>
 				</div>
 			</section>
-
 			<section className="section__map">
-				<div className="column__1">
-					<GoogleMap
-					center={center}
-					zoom={14}
-					markerIconUrl="/icons/pin.svg"
-					markerSize={56}
-					styles={MapStyles}
-					markerTitle="Oficinas"
-					className="mapa"
-					/>
-				</div>
+			    <div className="column__1">
+			        <iframe
+			            className="mapa"
+			            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.7903269017866!2d-89.62999172341185!3d21.001040333097514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f5675004bf83fc5%3A0xdbbd0178c5246fee!2sIlco%20constructores.!5e0!3m2!1ses!2smx!4v1792707373010!5m2!1ses!2smx"
+			            width="100%"
+			            height="450"
+			            style={{ border: 0 }}
+			            allowFullScreen
+			            loading="lazy"
+			            referrerPolicy="strict-origin-when-cross-origin"
+			            title="Ubicación de Ilco Constructores"
+			        />
+			    </div>
 			</section>
 		</main>
 	);
